@@ -1,9 +1,11 @@
-import 'package:html/dom.dart';
 import 'package:linkfo/linkfo.dart';
 import 'package:linkfo/src/models/page_info/page_info.dart';
 
 class AmazonScraper extends Scraper {
-  const AmazonScraper(Document doc, String url) : super(doc, url);
+  AmazonScraper({
+    required String body,
+    required String url,
+  }) : super(body: body, url: url);
 
   static final regex = RegExp(
     r'https?:\/\/(.*amazon\..*\/.*|.*amzn\..*\/.*|.*a\.co\/.*)',

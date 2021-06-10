@@ -1,4 +1,3 @@
-import 'package:html/dom.dart';
 import 'package:linkfo/linkfo.dart';
 import 'package:linkfo/src/models/open_graph_audio/open_graph_audio.dart';
 import 'package:linkfo/src/models/open_graph_image/open_graph_image.dart';
@@ -6,7 +5,10 @@ import 'package:linkfo/src/models/open_graph_video/open_graph_video.dart';
 import 'package:linkfo/src/models/page_info/page_info.dart';
 
 class OpenGraphScraper extends Scraper {
-  const OpenGraphScraper(Document doc, String url) : super(doc, url);
+  OpenGraphScraper({
+    required String body,
+    required String url,
+  }) : super(body: body, url: url);
 
   /// The standard defines that, at a minimum, these must be supplied
   @override

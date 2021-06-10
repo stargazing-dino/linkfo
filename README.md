@@ -13,38 +13,35 @@ install `linkfo`:
 Linkfo uses sealed unions to handle the case of possible matches:
 
 ```dart
-import 'package:html/parser.dart' show parse;
-
 const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
-final response = await client.get(Uri.parse(url));
 
-final doc = parse(response.body);
-final info = Scraper.parse(doc, url);
+final response = await client.get(Uri.parse(url));
+final info = Scraper.parse(body: response.body, url: url);
 
 info.map(
   openGraph: (info) {
-      // ...
+    print(info.title);
+    // ...
   },
-  twitterCards: (_) {
-      // ...
+  twitterCards: (info) {
+    // ...
   },
-  amazon: (_) {
-      // ...
+  amazon: (info) {
+    // ...
   },
 );
 ```
 
-If you're certain you'll only be encountering one type of link, you can use that parser instead.
+If you're certain you'll only be encountering one type of protocol, you can use that corresponding parser instead.
 
 ```dart
 const url = 'https://www.imdb.com/title/tt0117500/';
 
 final response = await client.get(Uri.parse(url));
-
-final doc = parse(response.body);
-final scraper = TwitterCardsScraper(doc, url);
-
+final scraper = TwitterCardsScraper(body: response.body, url: url);
 final info = scraper.scrape();
+
+print(info.title);
 ```
 
 ## Note

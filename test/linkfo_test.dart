@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:html/parser.dart' show parse;
 import 'package:http/http.dart' as http;
 import 'package:linkfo/linkfo.dart';
 import 'package:linkfo/src/scrapers/open_graph.dart';
@@ -12,10 +11,7 @@ void main() {
     const url = 'https://www.imdb.com/title/tt0117500/';
 
     final response = await client.get(Uri.parse(url));
-
-    final doc = parse(response.body);
-    final scraper = OpenGraphScraper(doc, url);
-
+    final scraper = OpenGraphScraper(body: response.body, url: url);
     final info = scraper.scrape();
 
     expect(info.description, isNotNull);
@@ -27,10 +23,7 @@ void main() {
     const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
 
     final response = await client.get(Uri.parse(url));
-
-    final doc = parse(response.body);
-    final scraper = OpenGraphScraper(doc, url);
-
+    final scraper = OpenGraphScraper(body: response.body, url: url);
     final info = scraper.scrape();
 
     expect(info.description, isNotNull);
@@ -42,10 +35,7 @@ void main() {
     const url = 'https://www.imdb.com/title/tt0117500/';
 
     final response = await client.get(Uri.parse(url));
-
-    final doc = parse(response.body);
-    final scraper = TwitterCardsScraper(doc, url);
-
+    final scraper = TwitterCardsScraper(body: response.body, url: url);
     final info = scraper.scrape();
 
     expect(info.description, isNotNull);
@@ -57,10 +47,7 @@ void main() {
     const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
 
     final response = await client.get(Uri.parse(url));
-
-    final doc = parse(response.body);
-    final scraper = TwitterCardsScraper(doc, url);
-
+    final scraper = TwitterCardsScraper(body: response.body, url: url);
     final info = scraper.scrape();
 
     expect(info.description, isNotNull);
@@ -70,10 +57,9 @@ void main() {
 
   test('Parses with open graph first using Global search', () async {
     const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
-    final response = await client.get(Uri.parse(url));
 
-    final doc = parse(response.body);
-    final info = Scraper.parse(doc, url);
+    final response = await client.get(Uri.parse(url));
+    final info = Scraper.parse(body: response.body, url: url);
 
     info.map(
       openGraph: (info) {

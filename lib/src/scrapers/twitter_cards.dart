@@ -1,9 +1,11 @@
-import 'package:html/dom.dart';
 import 'package:linkfo/linkfo.dart';
 import 'package:linkfo/src/models/page_info/page_info.dart';
 
 class TwitterCardsScraper extends Scraper {
-  const TwitterCardsScraper(Document doc, String url) : super(doc, url);
+  TwitterCardsScraper({
+    required String body,
+    required String url,
+  }) : super(body: body, url: url);
 
   @override
   bool meetsRequirements() {
