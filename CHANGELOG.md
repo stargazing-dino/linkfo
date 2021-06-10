@@ -1,4 +1,4 @@
-## 0.0.2
+## 0.0.2+1
 Exports other scrapers
 
 ## 0.0.2
