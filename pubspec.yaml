@@ -1,7 +1,7 @@
 name: linkfo
 description: Crawls and gathers open graph and twitter cards information from links
 version: 0.0.1
-homepage: 
+homepage: https://github.com/Nolence/linkfo
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
