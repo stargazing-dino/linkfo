@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart' show parse;
 import 'package:linkfo/src/models/page_info/page_info.dart';
-import 'package:linkfo/src/scrapers/amazon.dart';
-import 'package:linkfo/src/scrapers/open_graph.dart';
-import 'package:linkfo/src/scrapers/twitter_cards.dart';
+import 'package:linkfo/src/scrapers/scrapers.dart';
 import 'package:linkfo/src/utils.dart';
+
+export 'package:linkfo/src/scrapers/scrapers.dart';
 
 abstract class WithDoc {
   WithDoc(this.body) : doc = parse(body);
