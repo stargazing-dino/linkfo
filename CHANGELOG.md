@@ -1,3 +1,6 @@
+## 0.0.3+1
+Added more exports
+
 ## 0.0.3
 Moves to a more sealed union type of deal
 
