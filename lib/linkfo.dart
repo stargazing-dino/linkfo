@@ -1,6 +1,5 @@
 library linkfo;
 
-import 'package:flutter/material.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart' show parse;
 import 'package:linkfo/src/models/models.dart';
@@ -38,12 +37,12 @@ abstract class Scraper extends WithDoc with ScrapingUtils {
   }) {
     final openGraphScraper = OpenGraphScraper(body: body, url: url);
     if (openGraphScraper.meetsRequirements()) {
-      return openGraphScraper.scrape();
+      return openGraphScraper.pageInfoScrape();
     }
 
     final twitterCardsScraper = TwitterCardsScraper(body: body, url: url);
     if (twitterCardsScraper.meetsRequirements()) {
-      return twitterCardsScraper.scrape();
+      return twitterCardsScraper.pageInfoScrape();
     }
 
     final amazonScraper = AmazonScraper(body: body, url: url);
@@ -54,6 +53,7 @@ abstract class Scraper extends WithDoc with ScrapingUtils {
     }
   }
 
-  @protected
-  PageInfo scrape();
+  dynamic scrape();
+
+  PageInfo pageInfoScrape();
 }

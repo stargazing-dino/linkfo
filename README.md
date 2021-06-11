@@ -16,36 +16,65 @@ Linkfo uses sealed unions to handle the case of possible matches:
 const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
 
 final response = await client.get(Uri.parse(url));
-final info = Scraper.parse(body: response.body, url: url);
+final scraper = TwitterCardsScraper(body: response.body, url: url);
+final info = scraper.scrape();
 
 info.map(
-  openGraph: (info) {
-    print(info.title);
+  app: (_) {
     // ...
   },
-  twitterCards: (info) {
+  summaryLargeImage: (_) {
     // ...
   },
-  amazon: (info) {
+  player: (playerInfo) {
+    print(playerInfo.title);
+    print(playerInfo.player);
+  },
+  summary: (_) {
     // ...
   },
 );
 ```
 
-If you're certain you'll only be encountering one type of protocol, you can use that corresponding parser instead.
-
 ```dart
 const url = 'https://www.imdb.com/title/tt0117500/';
 
 final response = await client.get(Uri.parse(url));
-final scraper = TwitterCardsScraper(body: response.body, url: url);
+final scraper = OpenGraphScraper(body: response.body, url: url);
 final info = scraper.scrape();
 
-print(info.title);
+expect(info.description, isNotNull);
+expect(info.image, isNotNull);
+expect(info.title, isNotNull);
 ```
+
+If you intend to match all possible cases, you can go so far as to prepare for all cases:
+
+```dart
+const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
+
+final response = await client.get(Uri.parse(url));
+final info = Scraper.parse(body: response.body, url: url);
+
+info.maybeWhen(
+  openGraph: (info) {
+    print(info.description);
+    print(info.image);
+    print(info.title);
+  },
+  twitterCards: (_) {
+    // ...
+  },
+  orElse: () {
+    // ...
+  },
+);
+```
+
+Currently the only supported parsers are Amazon (ish), [Open Graph](https://ogp.me/) and [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started).
 
 ## Note
 
-This api is in early development and might change drastically as I look for the best way to return parsed information. This includes Twitter cards which are more like sealed unions themselves as they can be only one of four categories.
+This api is in early development and might change drastically as I look for the best way to return parsed information.
 
 PRs and Issues welcome

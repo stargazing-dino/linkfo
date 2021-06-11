@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:linkfo/src/models/open_graph.dart';
+import 'package:linkfo/src/models/open_graph_metadata.dart';
 
 part 'open_graph_audio.freezed.dart';
 part 'open_graph_audio.g.dart';

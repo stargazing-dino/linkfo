@@ -18,6 +18,13 @@ class AmazonScraper extends Scraper {
   }
 
   @override
+  PageInfo pageInfoScrape() {
+    throw StateError(
+      'Amazon does not have a corresponding page info and can be ignored',
+    );
+  }
+
+  @override
   AmazonInfo scrape() {
     // final images = [
     //   getDocAttrElement('.a-dynamic-image', 'data-old-hires'),

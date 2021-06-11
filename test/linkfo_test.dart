@@ -38,7 +38,6 @@ void main() {
     final scraper = TwitterCardsScraper(body: response.body, url: url);
     final info = scraper.scrape();
 
-    expect(info.description, isNotNull);
     expect(info.image, isNotNull);
     expect(info.title, isNotNull);
   });
@@ -50,9 +49,35 @@ void main() {
     final scraper = TwitterCardsScraper(body: response.body, url: url);
     final info = scraper.scrape();
 
-    expect(info.description, isNotNull);
     expect(info.image, isNotNull);
     expect(info.title, isNotNull);
+  });
+
+  test('parses twitter cards youtube as video', () async {
+    const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
+
+    final response = await client.get(Uri.parse(url));
+    final scraper = TwitterCardsScraper(body: response.body, url: url);
+    final info = scraper.scrape();
+
+    info.map(
+      app: (_) {
+        expect(false, isTrue);
+      },
+      summaryLargeImage: (_) {
+        expect(false, isTrue);
+      },
+      player: (playerInfo) {
+        expect(playerInfo.player, isNotNull);
+        expect(playerInfo.playerHeight, isNotNull);
+        expect(playerInfo.playerWidth, isNotNull);
+        expect(playerInfo.image, isNotNull);
+        expect(playerInfo.title, isNotNull);
+      },
+      summary: (_) {
+        expect(false, isTrue);
+      },
+    );
   });
 
   test('Parses with open graph first using Global search', () async {
@@ -61,7 +86,7 @@ void main() {
     final response = await client.get(Uri.parse(url));
     final info = Scraper.parse(body: response.body, url: url);
 
-    info.map(
+    info.maybeWhen(
       openGraph: (info) {
         expect(info.description, isNotNull);
         expect(info.image, isNotNull);
@@ -70,7 +95,7 @@ void main() {
       twitterCards: (_) {
         expect(false, isTrue);
       },
-      amazon: (_) {
+      orElse: () {
         expect(false, isTrue);
       },
     );

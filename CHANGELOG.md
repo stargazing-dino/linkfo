@@ -1,3 +1,6 @@
+## 0.0.3
+Moves to a more sealed union type of deal
+
 ## 0.0.2+3
 Exports models
 

@@ -1,16 +1,5 @@
 import 'package:linkfo/src/models/basic_metadata.dart';
 
-enum OpenGraphType {
-  music,
-  video,
-
-  // No vertical
-  article,
-  book,
-  profile,
-  website,
-}
-
 abstract class OpenGraphMetadata extends BasicMetadata {
   /// og:title - The title of your object as it should appear within the graph, e.g., "The Rock".
   @override

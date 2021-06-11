@@ -1,6 +1,6 @@
 name: linkfo
 description: Crawls and gathers open graph and twitter cards information from links
-version: 0.0.2+3
+version: 0.0.3
 homepage: https://github.com/Nolence/linkfo
 
 environment:

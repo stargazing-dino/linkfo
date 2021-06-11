@@ -62,6 +62,32 @@ mixin ScrapingUtils on WithDoc {
     )?.attributes[key];
   }
 
+  // TODO: Please test me !!
+  List<String>? getAllProperties(
+    String? property, {
+    String tag = 'meta',
+    List<String> attributes = const ['property', 'name'],
+    String key = 'content',
+  }) {
+    final elements = doc
+        .getElementsByTagName(tag)
+        .where(
+          (element) {
+            for (final attr in attributes) {
+              if (element.attributes[attr] == property) {
+                return element.attributes[key] != null;
+              }
+            }
+
+            return false;
+          },
+        )
+        .map((element) => element.attributes[key]!)
+        .toList();
+
+    return elements.isEmpty ? null : elements;
+  }
+
   String? getDocAttrElement(String query, String attr) {
     final el = doc.querySelector(query);
 
