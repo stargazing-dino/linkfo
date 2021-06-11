@@ -26,6 +26,8 @@ OpenGraph _$OpenGraphFromJson(Map<String, dynamic> json) {
       return _Video.fromJson(json);
     case 'website':
       return _Website.fromJson(json);
+    case 'any':
+      return _Any.fromJson(json);
 
     default:
       throw FallThroughError();
@@ -262,6 +264,39 @@ class _$OpenGraphTearOff {
     );
   }
 
+  _Any any(
+      {required String title,
+      required String type,
+      required String image,
+      required String? url,
+      required String? audio,
+      required String? description,
+      required String? determiner,
+      required String? locale,
+      required String? alternateLocale,
+      required String? siteName,
+      required String? video,
+      required OpenGraphImage? imageData,
+      required OpenGraphVideo? videoData,
+      required OpenGraphAudio? audioData}) {
+    return _Any(
+      title: title,
+      type: type,
+      image: image,
+      url: url,
+      audio: audio,
+      description: description,
+      determiner: determiner,
+      locale: locale,
+      alternateLocale: alternateLocale,
+      siteName: siteName,
+      video: video,
+      imageData: imageData,
+      videoData: videoData,
+      audioData: audioData,
+    );
+  }
+
   OpenGraph fromJson(Map<String, Object> json) {
     return OpenGraph.fromJson(json);
   }
@@ -399,6 +434,22 @@ mixin _$OpenGraph {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)
         website,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        any,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -513,6 +564,22 @@ mixin _$OpenGraph {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)?
         website,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        any,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -524,6 +591,7 @@ mixin _$OpenGraph {
     required TResult Function(_Profile value) profile,
     required TResult Function(_Video value) video,
     required TResult Function(_Website value) website,
+    required TResult Function(_Any value) any,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -534,6 +602,7 @@ mixin _$OpenGraph {
     TResult Function(_Profile value)? profile,
     TResult Function(_Video value)? video,
     TResult Function(_Website value)? website,
+    TResult Function(_Any value)? any,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1135,6 +1204,22 @@ class _$_Article implements _Article {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)
         website,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        any,
   }) {
     return article(
         title,
@@ -1272,6 +1357,22 @@ class _$_Article implements _Article {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)?
         website,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        any,
     required TResult orElse(),
   }) {
     if (article != null) {
@@ -1309,6 +1410,7 @@ class _$_Article implements _Article {
     required TResult Function(_Profile value) profile,
     required TResult Function(_Video value) video,
     required TResult Function(_Website value) website,
+    required TResult Function(_Any value) any,
   }) {
     return article(this);
   }
@@ -1322,6 +1424,7 @@ class _$_Article implements _Article {
     TResult Function(_Profile value)? profile,
     TResult Function(_Video value)? video,
     TResult Function(_Website value)? website,
+    TResult Function(_Any value)? any,
     required TResult orElse(),
   }) {
     if (article != null) {
@@ -1839,6 +1942,22 @@ class _$_Book implements _Book {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)
         website,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        any,
   }) {
     return book(
         title,
@@ -1974,6 +2093,22 @@ class _$_Book implements _Book {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)?
         website,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        any,
     required TResult orElse(),
   }) {
     if (book != null) {
@@ -2009,6 +2144,7 @@ class _$_Book implements _Book {
     required TResult Function(_Profile value) profile,
     required TResult Function(_Video value) video,
     required TResult Function(_Website value) website,
+    required TResult Function(_Any value) any,
   }) {
     return book(this);
   }
@@ -2022,6 +2158,7 @@ class _$_Book implements _Book {
     TResult Function(_Profile value)? profile,
     TResult Function(_Video value)? video,
     TResult Function(_Website value)? website,
+    TResult Function(_Any value)? any,
     required TResult orElse(),
   }) {
     if (book != null) {
@@ -2461,6 +2598,22 @@ class _$_Music implements _Music {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)
         website,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        any,
   }) {
     return music(
         title,
@@ -2592,6 +2745,22 @@ class _$_Music implements _Music {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)?
         website,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        any,
     required TResult orElse(),
   }) {
     if (music != null) {
@@ -2623,6 +2792,7 @@ class _$_Music implements _Music {
     required TResult Function(_Profile value) profile,
     required TResult Function(_Video value) video,
     required TResult Function(_Website value) website,
+    required TResult Function(_Any value) any,
   }) {
     return music(this);
   }
@@ -2636,6 +2806,7 @@ class _$_Music implements _Music {
     TResult Function(_Profile value)? profile,
     TResult Function(_Video value)? video,
     TResult Function(_Website value)? website,
+    TResult Function(_Any value)? any,
     required TResult orElse(),
   }) {
     if (music != null) {
@@ -3118,6 +3289,22 @@ class _$_Profile implements _Profile {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)
         website,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        any,
   }) {
     return profile(
         title,
@@ -3253,6 +3440,22 @@ class _$_Profile implements _Profile {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)?
         website,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        any,
     required TResult orElse(),
   }) {
     if (profile != null) {
@@ -3288,6 +3491,7 @@ class _$_Profile implements _Profile {
     required TResult Function(_Profile value) profile,
     required TResult Function(_Video value) video,
     required TResult Function(_Website value) website,
+    required TResult Function(_Any value) any,
   }) {
     return profile(this);
   }
@@ -3301,6 +3505,7 @@ class _$_Profile implements _Profile {
     TResult Function(_Profile value)? profile,
     TResult Function(_Video value)? video,
     TResult Function(_Website value)? website,
+    TResult Function(_Any value)? any,
     required TResult orElse(),
   }) {
     if (profile != null) {
@@ -3741,6 +3946,22 @@ class _$_Video implements _Video {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)
         website,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        any,
   }) {
     return video(
         title,
@@ -3872,6 +4093,22 @@ class _$_Video implements _Video {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)?
         website,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        any,
     required TResult orElse(),
   }) {
     if (video != null) {
@@ -3903,6 +4140,7 @@ class _$_Video implements _Video {
     required TResult Function(_Profile value) profile,
     required TResult Function(_Video value) video,
     required TResult Function(_Website value) website,
+    required TResult Function(_Any value) any,
   }) {
     return video(this);
   }
@@ -3916,6 +4154,7 @@ class _$_Video implements _Video {
     TResult Function(_Profile value)? profile,
     TResult Function(_Video value)? video,
     TResult Function(_Website value)? website,
+    TResult Function(_Any value)? any,
     required TResult orElse(),
   }) {
     if (video != null) {
@@ -4331,6 +4570,22 @@ class _$_Website implements _Website {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)
         website,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        any,
   }) {
     return website(
         title,
@@ -4462,6 +4717,22 @@ class _$_Website implements _Website {
             OpenGraphVideo? videoData,
             OpenGraphAudio? audioData)?
         website,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        any,
     required TResult orElse(),
   }) {
     if (website != null) {
@@ -4493,6 +4764,7 @@ class _$_Website implements _Website {
     required TResult Function(_Profile value) profile,
     required TResult Function(_Video value) video,
     required TResult Function(_Website value) website,
+    required TResult Function(_Any value) any,
   }) {
     return website(this);
   }
@@ -4506,6 +4778,7 @@ class _$_Website implements _Website {
     TResult Function(_Profile value)? profile,
     TResult Function(_Video value)? video,
     TResult Function(_Website value)? website,
+    TResult Function(_Any value)? any,
     required TResult orElse(),
   }) {
     if (website != null) {
@@ -4571,4 +4844,614 @@ abstract class _Website implements OpenGraph {
   @JsonKey(ignore: true)
   _$WebsiteCopyWith<_Website> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$AnyCopyWith<$Res> implements $OpenGraphCopyWith<$Res> {
+  factory _$AnyCopyWith(_Any value, $Res Function(_Any) then) =
+      __$AnyCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String title,
+      String type,
+      String image,
+      String? url,
+      String? audio,
+      String? description,
+      String? determiner,
+      String? locale,
+      String? alternateLocale,
+      String? siteName,
+      String? video,
+      OpenGraphImage? imageData,
+      OpenGraphVideo? videoData,
+      OpenGraphAudio? audioData});
+
+  @override
+  $OpenGraphImageCopyWith<$Res>? get imageData;
+  @override
+  $OpenGraphVideoCopyWith<$Res>? get videoData;
+  @override
+  $OpenGraphAudioCopyWith<$Res>? get audioData;
+}
+
+/// @nodoc
+class __$AnyCopyWithImpl<$Res> extends _$OpenGraphCopyWithImpl<$Res>
+    implements _$AnyCopyWith<$Res> {
+  __$AnyCopyWithImpl(_Any _value, $Res Function(_Any) _then)
+      : super(_value, (v) => _then(v as _Any));
+
+  @override
+  _Any get _value => super._value as _Any;
+
+  @override
+  $Res call({
+    Object? title = freezed,
+    Object? type = freezed,
+    Object? image = freezed,
+    Object? url = freezed,
+    Object? audio = freezed,
+    Object? description = freezed,
+    Object? determiner = freezed,
+    Object? locale = freezed,
+    Object? alternateLocale = freezed,
+    Object? siteName = freezed,
+    Object? video = freezed,
+    Object? imageData = freezed,
+    Object? videoData = freezed,
+    Object? audioData = freezed,
+  }) {
+    return _then(_Any(
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      audio: audio == freezed
+          ? _value.audio
+          : audio // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      determiner: determiner == freezed
+          ? _value.determiner
+          : determiner // ignore: cast_nullable_to_non_nullable
+              as String?,
+      locale: locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String?,
+      alternateLocale: alternateLocale == freezed
+          ? _value.alternateLocale
+          : alternateLocale // ignore: cast_nullable_to_non_nullable
+              as String?,
+      siteName: siteName == freezed
+          ? _value.siteName
+          : siteName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      video: video == freezed
+          ? _value.video
+          : video // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imageData: imageData == freezed
+          ? _value.imageData
+          : imageData // ignore: cast_nullable_to_non_nullable
+              as OpenGraphImage?,
+      videoData: videoData == freezed
+          ? _value.videoData
+          : videoData // ignore: cast_nullable_to_non_nullable
+              as OpenGraphVideo?,
+      audioData: audioData == freezed
+          ? _value.audioData
+          : audioData // ignore: cast_nullable_to_non_nullable
+              as OpenGraphAudio?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Any implements _Any {
+  const _$_Any(
+      {required this.title,
+      required this.type,
+      required this.image,
+      required this.url,
+      required this.audio,
+      required this.description,
+      required this.determiner,
+      required this.locale,
+      required this.alternateLocale,
+      required this.siteName,
+      required this.video,
+      required this.imageData,
+      required this.videoData,
+      required this.audioData});
+
+  factory _$_Any.fromJson(Map<String, dynamic> json) => _$_$_AnyFromJson(json);
+
+  @override
+  final String title;
+  @override
+  final String type;
+  @override
+  final String image;
+  @override
+  final String? url;
+  @override
+  final String? audio;
+  @override
+  final String? description;
+  @override
+  final String? determiner;
+  @override
+  final String? locale;
+  @override
+  final String? alternateLocale;
+  @override
+  final String? siteName;
+  @override
+  final String? video;
+  @override
+  final OpenGraphImage? imageData;
+  @override
+  final OpenGraphVideo? videoData;
+  @override
+  final OpenGraphAudio? audioData;
+
+  @override
+  String toString() {
+    return 'OpenGraph.any(title: $title, type: $type, image: $image, url: $url, audio: $audio, description: $description, determiner: $determiner, locale: $locale, alternateLocale: $alternateLocale, siteName: $siteName, video: $video, imageData: $imageData, videoData: $videoData, audioData: $audioData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Any &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.url, url) ||
+                const DeepCollectionEquality().equals(other.url, url)) &&
+            (identical(other.audio, audio) ||
+                const DeepCollectionEquality().equals(other.audio, audio)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.determiner, determiner) ||
+                const DeepCollectionEquality()
+                    .equals(other.determiner, determiner)) &&
+            (identical(other.locale, locale) ||
+                const DeepCollectionEquality().equals(other.locale, locale)) &&
+            (identical(other.alternateLocale, alternateLocale) ||
+                const DeepCollectionEquality()
+                    .equals(other.alternateLocale, alternateLocale)) &&
+            (identical(other.siteName, siteName) ||
+                const DeepCollectionEquality()
+                    .equals(other.siteName, siteName)) &&
+            (identical(other.video, video) ||
+                const DeepCollectionEquality().equals(other.video, video)) &&
+            (identical(other.imageData, imageData) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageData, imageData)) &&
+            (identical(other.videoData, videoData) ||
+                const DeepCollectionEquality()
+                    .equals(other.videoData, videoData)) &&
+            (identical(other.audioData, audioData) ||
+                const DeepCollectionEquality()
+                    .equals(other.audioData, audioData)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(title) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(image) ^
+      const DeepCollectionEquality().hash(url) ^
+      const DeepCollectionEquality().hash(audio) ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(determiner) ^
+      const DeepCollectionEquality().hash(locale) ^
+      const DeepCollectionEquality().hash(alternateLocale) ^
+      const DeepCollectionEquality().hash(siteName) ^
+      const DeepCollectionEquality().hash(video) ^
+      const DeepCollectionEquality().hash(imageData) ^
+      const DeepCollectionEquality().hash(videoData) ^
+      const DeepCollectionEquality().hash(audioData);
+
+  @JsonKey(ignore: true)
+  @override
+  _$AnyCopyWith<_Any> get copyWith =>
+      __$AnyCopyWithImpl<_Any>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData,
+            DateTime? publishedTime,
+            DateTime? modifiedTime,
+            DateTime? expirationTime,
+            List<String>? author,
+            String? section,
+            List<String>? tag)
+        article,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData,
+            List<String>? author,
+            String? isbn,
+            DateTime? releaseDate,
+            List<String>? tag)
+        book,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        music,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData,
+            String? firstName,
+            String? lastName,
+            String? username,
+            ProfileGender? gender)
+        profile,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        video,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        website,
+    required TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)
+        any,
+  }) {
+    return any(title, type, image, url, audio, description, determiner, locale,
+        alternateLocale, siteName, this.video, imageData, videoData, audioData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData,
+            DateTime? publishedTime,
+            DateTime? modifiedTime,
+            DateTime? expirationTime,
+            List<String>? author,
+            String? section,
+            List<String>? tag)?
+        article,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData,
+            List<String>? author,
+            String? isbn,
+            DateTime? releaseDate,
+            List<String>? tag)?
+        book,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        music,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData,
+            String? firstName,
+            String? lastName,
+            String? username,
+            ProfileGender? gender)?
+        profile,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        video,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        website,
+    TResult Function(
+            String title,
+            String type,
+            String image,
+            String? url,
+            String? audio,
+            String? description,
+            String? determiner,
+            String? locale,
+            String? alternateLocale,
+            String? siteName,
+            String? video,
+            OpenGraphImage? imageData,
+            OpenGraphVideo? videoData,
+            OpenGraphAudio? audioData)?
+        any,
+    required TResult orElse(),
+  }) {
+    if (any != null) {
+      return any(
+          title,
+          type,
+          image,
+          url,
+          audio,
+          description,
+          determiner,
+          locale,
+          alternateLocale,
+          siteName,
+          this.video,
+          imageData,
+          videoData,
+          audioData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Article value) article,
+    required TResult Function(_Book value) book,
+    required TResult Function(_Music value) music,
+    required TResult Function(_Profile value) profile,
+    required TResult Function(_Video value) video,
+    required TResult Function(_Website value) website,
+    required TResult Function(_Any value) any,
+  }) {
+    return any(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Article value)? article,
+    TResult Function(_Book value)? book,
+    TResult Function(_Music value)? music,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_Video value)? video,
+    TResult Function(_Website value)? website,
+    TResult Function(_Any value)? any,
+    required TResult orElse(),
+  }) {
+    if (any != null) {
+      return any(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_AnyToJson(this)..['runtimeType'] = 'any';
+  }
+}
+
+abstract class _Any implements OpenGraph {
+  const factory _Any(
+      {required String title,
+      required String type,
+      required String image,
+      required String? url,
+      required String? audio,
+      required String? description,
+      required String? determiner,
+      required String? locale,
+      required String? alternateLocale,
+      required String? siteName,
+      required String? video,
+      required OpenGraphImage? imageData,
+      required OpenGraphVideo? videoData,
+      required OpenGraphAudio? audioData}) = _$_Any;
+
+  factory _Any.fromJson(Map<String, dynamic> json) = _$_Any.fromJson;
+
+  @override
+  String get title => throw _privateConstructorUsedError;
+  @override
+  String get type => throw _privateConstructorUsedError;
+  @override
+  String get image => throw _privateConstructorUsedError;
+  @override
+  String? get url => throw _privateConstructorUsedError;
+  @override
+  String? get audio => throw _privateConstructorUsedError;
+  @override
+  String? get description => throw _privateConstructorUsedError;
+  @override
+  String? get determiner => throw _privateConstructorUsedError;
+  @override
+  String? get locale => throw _privateConstructorUsedError;
+  @override
+  String? get alternateLocale => throw _privateConstructorUsedError;
+  @override
+  String? get siteName => throw _privateConstructorUsedError;
+  @override
+  String? get video => throw _privateConstructorUsedError;
+  @override
+  OpenGraphImage? get imageData => throw _privateConstructorUsedError;
+  @override
+  OpenGraphVideo? get videoData => throw _privateConstructorUsedError;
+  @override
+  OpenGraphAudio? get audioData => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$AnyCopyWith<_Any> get copyWith => throw _privateConstructorUsedError;
 }

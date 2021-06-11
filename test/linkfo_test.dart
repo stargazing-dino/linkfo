@@ -31,6 +31,26 @@ void main() {
     expect(info.title, isNotNull);
   });
 
+  test('parses another open graph youtube url', () async {
+    const url = 'https://www.youtube.com/watch?v=v37KOsj6SG4';
+
+    final response = await client.get(Uri.parse(url));
+    final scraper = OpenGraphScraper(body: response.body, url: url);
+    final info = scraper.scrape();
+
+    info.maybeMap(
+      video: (videoInfo) {
+        expect(videoInfo.video, isNotNull);
+        expect(videoInfo.videoData?.url, isNotNull);
+        expect(videoInfo.videoData?.height, isNotNull);
+        expect(videoInfo.videoData?.width, isNotNull);
+      },
+      orElse: () {
+        expect(false, isTrue);
+      },
+    );
+  });
+
   test('parses twitter cards imbd url', () async {
     const url = 'https://www.imdb.com/title/tt0117500/';
 

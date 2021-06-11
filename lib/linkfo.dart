@@ -1,5 +1,6 @@
 library linkfo;
 
+import 'package:flutter/material.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart' show parse;
 import 'package:linkfo/src/models/models.dart';
@@ -53,7 +54,12 @@ abstract class Scraper extends WithDoc with ScrapingUtils {
     }
   }
 
-  dynamic scrape();
+  @mustCallSuper
+  dynamic scrape() {
+    if (isRecaptcha) {
+      throw StateError('Recieved a recaptcha page');
+    }
+  }
 
   PageInfo pageInfoScrape();
 }

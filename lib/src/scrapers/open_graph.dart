@@ -25,6 +25,8 @@ class OpenGraphScraper extends Scraper {
   // TODO: Will this require flutter
   @override
   OpenGraph scrape() {
+    super.scrape();
+
     OpenGraphImage? imageData;
 
     final imageSecureUrl = getProperty('og:image:secure_url');
@@ -200,6 +202,22 @@ class OpenGraphScraper extends Scraper {
         gender: profileGender,
       );
     } else if (type.contains('video')) {
+      // TODO: Should I add youtube video id? It seems basic enough
+      //   static final idRegex = RegExp(
+      //     r'^.*((m\.)?youtu\.be\/|vi?\/|u\/\w\/|embed\/|\?vi?=|\&vi?=)([^#\&\?]*).*',
+      //     caseSensitive: false,
+      //   );
+      //
+      //   String? getYoutTubeVideoId(String url) {
+      //     final parsed = idRegex.firstMatch(url);
+
+      //     if (parsed != null && parsed.groupCount >= 3) {
+      //       return parsed[3];
+      //     } else {
+      //       return null;
+      //     }
+      //   }
+
       return OpenGraph.video(
         title: title,
         type: type,
@@ -234,9 +252,26 @@ class OpenGraphScraper extends Scraper {
         audioData: audioData,
       );
     } else {
-      throw UnimplementedError(
-        'The Open Graph protocol does not define a corresponding type for'
-        ' $type',
+      // throw UnimplementedError(
+      //   'The Open Graph protocol does not define a corresponding type for'
+      //   ' $type',
+      // );
+
+      return OpenGraph.any(
+        title: title,
+        type: type,
+        image: image,
+        url: url,
+        audio: audioUrl,
+        description: description,
+        determiner: determiner,
+        locale: locale,
+        alternateLocale: alternateLocale,
+        siteName: siteName,
+        video: videoUrl,
+        imageData: imageData,
+        videoData: videoData,
+        audioData: audioData,
       );
     }
   }

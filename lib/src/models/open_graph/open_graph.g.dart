@@ -340,3 +340,45 @@ Map<String, dynamic> _$_$_WebsiteToJson(_$_Website instance) =>
       'videoData': instance.videoData,
       'audioData': instance.audioData,
     };
+
+_$_Any _$_$_AnyFromJson(Map<String, dynamic> json) {
+  return _$_Any(
+    title: json['title'] as String,
+    type: json['type'] as String,
+    image: json['image'] as String,
+    url: json['url'] as String?,
+    audio: json['audio'] as String?,
+    description: json['description'] as String?,
+    determiner: json['determiner'] as String?,
+    locale: json['locale'] as String?,
+    alternateLocale: json['alternateLocale'] as String?,
+    siteName: json['siteName'] as String?,
+    video: json['video'] as String?,
+    imageData: json['imageData'] == null
+        ? null
+        : OpenGraphImage.fromJson(json['imageData'] as Map<String, dynamic>),
+    videoData: json['videoData'] == null
+        ? null
+        : OpenGraphVideo.fromJson(json['videoData'] as Map<String, dynamic>),
+    audioData: json['audioData'] == null
+        ? null
+        : OpenGraphAudio.fromJson(json['audioData'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$_$_AnyToJson(_$_Any instance) => <String, dynamic>{
+      'title': instance.title,
+      'type': instance.type,
+      'image': instance.image,
+      'url': instance.url,
+      'audio': instance.audio,
+      'description': instance.description,
+      'determiner': instance.determiner,
+      'locale': instance.locale,
+      'alternateLocale': instance.alternateLocale,
+      'siteName': instance.siteName,
+      'video': instance.video,
+      'imageData': instance.imageData,
+      'videoData': instance.videoData,
+      'audioData': instance.audioData,
+    };

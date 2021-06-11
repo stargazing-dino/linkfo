@@ -181,6 +181,23 @@ class OpenGraph with _$OpenGraph implements OpenGraphMetadata {
     required OpenGraphAudio? audioData,
   }) = _Website;
 
+  const factory OpenGraph.any({
+    required String title,
+    required String type,
+    required String image,
+    required String? url,
+    required String? audio,
+    required String? description,
+    required String? determiner,
+    required String? locale,
+    required String? alternateLocale,
+    required String? siteName,
+    required String? video,
+    required OpenGraphImage? imageData,
+    required OpenGraphVideo? videoData,
+    required OpenGraphAudio? audioData,
+  }) = _Any;
+
   factory OpenGraph.fromJson(Map<String, dynamic> json) =>
       _$OpenGraphFromJson(json);
 }

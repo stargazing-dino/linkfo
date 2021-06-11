@@ -26,6 +26,7 @@ class AmazonScraper extends Scraper {
 
   @override
   AmazonInfo scrape() {
+    super.scrape();
     // final images = [
     //   getDocAttrElement('.a-dynamic-image', 'data-old-hires'),
     //   getDocAttrElement('.a-dynamic-image', 'src'),

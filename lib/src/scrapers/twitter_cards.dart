@@ -20,6 +20,8 @@ class TwitterCardsScraper extends Scraper {
 
   @override
   TwitterCards scrape() {
+    super.scrape();
+
     /// Common types
     final card = getProperty('twitter:card');
     final site = getProperty('twitter:site');

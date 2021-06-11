@@ -9,6 +9,8 @@ final _regexImage = RegExp(
 final _videoRegex = RegExp(r'\w+\.(mp4|ogg|webm)', caseSensitive: false);
 
 mixin ScrapingUtils on WithDoc {
+  bool get isRecaptcha => doc.getElementById('captcha-page') != null;
+
   bool isVideo(String mimeType) => mimeType.startsWith('video/');
 
   bool isAudio(String mimeType) => mimeType.startsWith('audio/');
