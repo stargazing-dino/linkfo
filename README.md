@@ -11,7 +11,7 @@ install `linkfo`:
 ```
 
 <p>
- <img src="https://github.com/Nolence/linkfo/blob/main/screenshots/example_app.png?raw=true" width="320" height="568"/>
+ <img src="https://github.com/Nolence/linkfo/blob/main/screenshots/example_app.png?raw=true" width="414" height="896"/>
 </p>
 
 Linkfo uses sealed unions to handle the case of possible matches:
