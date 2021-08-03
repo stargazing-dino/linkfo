@@ -27,22 +27,3 @@ Map<String, dynamic> _$_$TwitterCardsInfoToJson(_$TwitterCardsInfo instance) =>
     <String, dynamic>{
       'twitterCards': instance.twitterCards,
     };
-
-_$AmazonInfo _$_$AmazonInfoFromJson(Map<String, dynamic> json) {
-  return _$AmazonInfo(
-    title: json['title'] as String?,
-    content: json['content'] as String?,
-    url: json['url'] as String?,
-    image: json['image'] as String?,
-    description: json['description'] as String?,
-  );
-}
-
-Map<String, dynamic> _$_$AmazonInfoToJson(_$AmazonInfo instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'content': instance.content,
-      'url': instance.url,
-      'image': instance.image,
-      'description': instance.description,
-    };

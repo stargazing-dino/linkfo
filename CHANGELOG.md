@@ -1,3 +1,6 @@
+## 0.0.4
+Aligns default scraper with use of other scrapers. A new example app was added to show the possible use case for a thumbnail scroller.
+
 ## 0.0.3+2
 Added reCAPTCHA check
 

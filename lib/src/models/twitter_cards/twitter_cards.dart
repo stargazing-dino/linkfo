@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:linkfo/linkfo.dart';
+import 'package:linkfo/src/models/scraper.dart';
 
 part 'twitter_cards.freezed.dart';
 part 'twitter_cards.g.dart';

@@ -1,8 +1,8 @@
-import 'package:linkfo/linkfo.dart';
 import 'package:linkfo/src/models/open_graph/open_graph.dart';
 import 'package:linkfo/src/models/open_graph_audio/open_graph_audio.dart';
 import 'package:linkfo/src/models/open_graph_image/open_graph_image.dart';
 import 'package:linkfo/src/models/open_graph_video/open_graph_video.dart';
+import 'package:linkfo/src/models/scraper.dart';
 
 /// A parser for the open graph protocol
 class OpenGraphScraper extends Scraper {
@@ -86,7 +86,7 @@ class OpenGraphScraper extends Scraper {
 
     /// Common types
     final title = getProperty('og:title')!;
-    final type = getProperty('og:type')!;
+    final type = getProperty('og:type') ?? 'any';
     final image = getProperty('og:image')!;
     final url = getProperty('og:url');
     final description = getProperty('og:description');

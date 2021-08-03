@@ -71,7 +71,7 @@ info.maybeWhen(
 );
 ```
 
-Currently the only supported parsers are Amazon (ish), [Open Graph](https://ogp.me/) and [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started).
+Currently the only supported parsers are [Open Graph](https://ogp.me/) and [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started).
 
 ## Note
 

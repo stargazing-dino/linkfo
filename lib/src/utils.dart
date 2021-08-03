@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart';
-import 'package:linkfo/linkfo.dart';
+import 'package:linkfo/src/models/scraper.dart';
 import 'package:path/path.dart' as path;
 
 final _regexImage = RegExp(

@@ -1,5 +1,5 @@
-import 'package:linkfo/linkfo.dart';
 import 'package:linkfo/src/models/page_info/page_info.dart';
+import 'package:linkfo/src/models/scraper.dart';
 import 'package:linkfo/src/models/twitter_cards/twitter_cards.dart';
 
 class TwitterCardsScraper extends Scraper {

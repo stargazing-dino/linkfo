@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:linkfo/linkfo.dart';
+import 'package:linkfo/src/models/scraper.dart';
 import 'package:linkfo/src/scrapers/open_graph.dart';
 import 'package:linkfo/src/scrapers/twitter_cards.dart';
 
