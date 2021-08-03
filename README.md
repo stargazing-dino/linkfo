@@ -11,9 +11,9 @@ install `linkfo`:
 ```
 
 <p align="center">
-<img src="https://github.com/Nolence/linkfo/blob/main/screenshots/example_app.png?raw=true" width="45%"/>
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img src="https://github.com/Nolence/linkfo/blob/main/screenshots/carbon.png?raw=true" width="45%"/>
+  <img src="https://github.com/Nolence/linkfo/blob/main/screenshots/example_app.png?raw=true" width="35%"/>
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="https://github.com/Nolence/linkfo/blob/main/screenshots/carbon.png?raw=true" width="60%"/>
 </p>
 
 # Use
