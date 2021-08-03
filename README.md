@@ -1,6 +1,6 @@
 # linkfo
 
-Retrieve basic information from links
+Retrieve basic information from links using sealed unions to better handle possible cases.
 
 ## Getting Started
 
@@ -10,16 +10,42 @@ install `linkfo`:
     linkfo: <latest_version>
 ```
 
-<p>
- <img src="https://github.com/Nolence/linkfo/blob/main/screenshots/example_app.png?raw=true" width="414" height="896"/>
+<p align="center">
+<img src="https://github.com/Nolence/linkfo/blob/main/screenshots/example_app.png?raw=true" width="45%"/>
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="https://github.com/Nolence/linkfo/blob/main/screenshots/carbon.png?raw=true" width="45%"/>
 </p>
 
-Linkfo uses sealed unions to handle the case of possible matches:
+# Use
 
-<p>
- <img src="https://github.com/Nolence/linkfo/blob/main/screenshots/carbon.png?raw=true"/>
-</p>
+This library is composed of child scrapers and one parent `Linkfo` scraper. You can scrape as broad or as narrow you'd like. Using `Linkfo` gives you the option to handle all possible cases.
 
+```dart
+const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
+
+final response = await client.get(Uri.parse(url));
+final scraper = Linkfo(body: response.body, url: url);
+final info = scraper.scrape();
+
+info.maybeWhen(
+  openGraph: (info) {
+    print(info.description);
+    print(info.image);
+    print(info.title);
+  },
+  twitterCards: (_) {
+    // ...
+  },
+  orElse: () {
+    // ...
+  },
+);
+```
+
+If you're certain you'll only run into one schema, you can use that specific scraper.
+
+
+# [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started)
 
 ```dart
 const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
@@ -45,6 +71,8 @@ info.map(
 );
 ```
 
+# [Open Graph](https://ogp.me/)
+
 ```dart
 const url = 'https://www.imdb.com/title/tt0117500/';
 
@@ -57,34 +85,8 @@ expect(info.image, isNotNull);
 expect(info.title, isNotNull);
 ```
 
-If you intend to match all possible cases, you can go so far as to prepare for all cases:
-
-```dart
-const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
-
-final response = await client.get(Uri.parse(url));
-final scraper = Linkfo(body: response.body, url: url);
-final info = scraper.scrape();
-
-info.maybeWhen(
-  openGraph: (info) {
-    print(info.description);
-    print(info.image);
-    print(info.title);
-  },
-  twitterCards: (_) {
-    // ...
-  },
-  orElse: () {
-    // ...
-  },
-);
-```
-
-Currently the only supported parsers are [Open Graph](https://ogp.me/) and [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started).
-
 ## Note
 
 This api is in early development and might change drastically as I look for the best way to return parsed information.
 
-PRs and Issues welcome
+PRs and Issues welcome. Note, one of my goals was to assume the least amount of nullability and go from there. Some websites are super weird too. Please provide all necessary information when creating issues for broken urls.

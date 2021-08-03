@@ -1,3 +1,6 @@
+## 0.0.4+1
+Pretty up readme and remove flutter dep
+
 ## 0.0.4
 Aligns default scraper with use of other scrapers. A new example app was added to show the possible use case for a thumbnail scroller.
 

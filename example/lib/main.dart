@@ -27,7 +27,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final links = [
       'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      'https://github.com/Nolence',
+      'https://medium.com/flutter/keys-what-are-they-good-for-13cb51742e7d',
       'https://flutter.dev/',
     ];
 
