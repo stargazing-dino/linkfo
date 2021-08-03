@@ -54,7 +54,8 @@ If you intend to match all possible cases, you can go so far as to prepare for a
 const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
 
 final response = await client.get(Uri.parse(url));
-final info = Scraper.parse(body: response.body, url: url);
+final scraper = Linkfo(body: response.body, url: url);
+final info = scraper.scrape();
 
 info.maybeWhen(
   openGraph: (info) {
