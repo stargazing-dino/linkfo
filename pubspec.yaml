@@ -5,20 +5,17 @@ homepage: https://github.com/Nolence/linkfo
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.17.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
   json_annotation: ^4.0.1
   collection: ^1.15.0
   path: ^1.8.0
   freezed_annotation: ^0.14.2
   html: ^0.15.0
+  meta: ^1.7.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  test:
   flutter_lints: ^1.0.0
   json_serializable:
   freezed:

@@ -1,12 +1,12 @@
 library linkfo;
 
-import 'package:flutter/material.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart' show parse;
 import 'package:linkfo/src/models/models.dart';
 import 'package:linkfo/src/scrapers/open_graph.dart';
 import 'package:linkfo/src/scrapers/twitter_cards.dart';
 import 'package:linkfo/src/utils.dart';
+import 'package:meta/meta.dart';
 
 export 'package:linkfo/src/models/models.dart';
 
