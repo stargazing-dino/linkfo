@@ -10,7 +10,16 @@ install `linkfo`:
     linkfo: <latest_version>
 ```
 
+<p>
+ <img src="https://github.com/Nolence/linkfo/blob/main/screenshots/example_app.png?raw=true" width="320" height="568"/>
+</p>
+
 Linkfo uses sealed unions to handle the case of possible matches:
+
+<p>
+ <img src="https://github.com/Nolence/linkfo/blob/main/screenshots/carbon.png?raw=true"/>
+</p>
+
 
 ```dart
 const url = 'https://www.youtube.com/watch?v=45MIykWJ-C4';
